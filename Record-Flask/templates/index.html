@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel='icon' href='{{ url_for('static', filename="img/iconos.png") }}' type="image/x-icon">
+</head>
+<body>
+    <div class="registro">
+
+        <h1 class="registro-title">Registro</h1>
+
+        <form action="/registro" method="post">
+            <label for="full-name">full name:</label>
+            <input type="text" name="full-name" id="full-name" placeholder="full name" required>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <label for="phone">Number phone:</label>
+            <input type="tel" name="phone" id="phone" placeholder="Number phone" required>
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+</body>
+</html>

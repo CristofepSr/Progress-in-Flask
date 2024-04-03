@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <link rel="stylesheet" type='text/css' href="{{ url_for('static', filename='css/user.css') }}">
+    <link rel='icon' href='{{ url_for('static', filename="img/iconos.png") }}' type="image/x-icon">
+</head>
+<body>
+    <div class="nav">
+        <a href="/">Serar Cecion</a>
+    </div>
+    <div class="user">
+        <img src="{{ url_for('static', filename='img/iconos.png') }}" alt="user">
+        <h2>User Data</h2>
+        <p>Nombre Completo: {{name}}</p>
+        <p>Coreo Electrónico: {{email}}</p>
+        <p>Numero Telefonico: {{phone}}</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+body{
+    margin: 0;
+}
+
+.nav{
+    background-color: #9654a1;
+    padding: 1rem;
+}
+
+.nav a{
+    font-family: cursive;
+    background-color: #d4ced5;
+    color: black;
+    text-decoration: none;
+    font-size: 30px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.user{
+    margin: 50px auto;
+    padding:1rem ;
+    width: 300px;
+    height: 270px;
+    background-color: #d4ced5;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 9px 9px 20px #9654a1;
+}
+
+.user img{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    box-shadow: 5px 5px 10px  #35044d;
+}
+
+.user h2{
+    font-size: 25px;
+
+}
+
+.user p{
+    font-size: 15px;
+    text-align: left;
+    margin: 9px;
+}

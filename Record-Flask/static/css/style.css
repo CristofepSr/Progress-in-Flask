@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.registro{
+    background-color:  #35044d;
+    width: 400px;
+    height: 400px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 9px;
+}
+
+.registro-title{
+    font-size: 40px;
+    color: #d4ced5;
+    margin-bottom: 20px;
+}
+
+.registro label, input{
+    display: block;
+    margin: 0 auto;
+}
+
+.registro label{
+    font-size: 15px;
+    margin: 5PX;
+    color:  #d4ced5;
+}
+
+.registro input{
+    background-color:  #550c6a ;
+    width: 300px;
+    padding: .5rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+
+.registro button{
+    font-family: cursive;
+    background-color:  #9e2b96 ;
+    color:  #d4ced5;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 30px;
+    padding: .6rem;
+    width: 180px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
