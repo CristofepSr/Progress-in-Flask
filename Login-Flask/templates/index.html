@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/login.png') }}" type="image/x-icon">
+</head>
+<body>
+    <h1 class='title'>Login Flak</h1>
+
+    <div class="login">
+        <form action="/login" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+            <label for="email">Correo Electronico:</label>
+            <input type="email" name="email" id="email" placeholder="Coreo Electronico" required>
+            <label for="password">Contraseña:</label>
+            <input type="password" name="password" id="password" placeholder="Contraseña" required>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+*{
+    font-family: cursive;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.title{
+    font-size: 40px;
+    text-align: center;
+    padding: 1rem;
+    margin: 0;
+    background-color: blanchedalmond;
+
+}
+
+.login{
+    width: 300px;
+    margin: 50px auto;
+    padding: 2rem ;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 30px;
+    box-shadow: 5px 5px 50px cornflowerblue;
+}
+
+label{
+    font-size: 20px;
+}
+
+input{
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 250px;
+    border:  greenyellow;
+    border-radius: 10px;
+}
+
+button{
+    margin-top: 30px;
+    width: 100px;
+    font-size: 20px;
+    padding: 9px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}

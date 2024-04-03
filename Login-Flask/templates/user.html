@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/user.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/login.png') }}" type="image/x-icon">
+</head>
+<body>
+    <div class="user">
+        <img src="{{ url_for('static', filename='img/login.png') }}" alt="">
+        <h1>Hola {{ nombre }}</h1>
+        <p>Tu email es: {{ coreo }}</p>
+    </div>
+</body>
+</html>
