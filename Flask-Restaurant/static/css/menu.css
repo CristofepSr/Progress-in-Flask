@@ -1,0 +1,65 @@
+:root{
+    --text: #03170c;
+    --background: #f6fef8;
+    --primary: #31e36c;
+    --secondary: #8adcaf;
+    --accent: #64d999;
+}
+
+body{
+    background-color: var(--background);
+    margin: 0;
+}
+
+main{
+    min-height: 76vh;
+    max-height: auto ;
+}
+
+.container{
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.categoria_list{
+
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+}
+
+.categoria_list li{
+    background-color: var(--secondary);
+    color: var(--text);
+    padding: 10px;
+    font-size: 30px;
+    border-radius: 20px;
+}
+
+.categoria_list li::selection{
+    background-color: var(--background);
+    color: var(--primary);
+}
+
+
+.plato_list{
+    list-style: inside;
+
+}
+
+.plato_list li{
+    font-size: 19px;
+}
+
+.plato_list li:hover{
+    background-color: var(--background);
+    cursor: pointer;
+    transition: .9s;
+}
+
+.plato_list li::selection{
+    background-color: var(--text);
+    color: var(--background);
+}

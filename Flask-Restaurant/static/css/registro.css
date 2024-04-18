@@ -1,0 +1,96 @@
+:root{
+    --text: #03170c;
+    --background: #f6fef8;
+    --primary: #31e36c;
+    --secondary: #8adcaf;
+    --accent: #64d999;
+
+}
+
+body{
+    background-color: var(--background);
+    margin: 0;
+}
+
+main{
+    min-height: 60vh;
+    max-height: auto ;
+}  
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.login_img img{
+    width: 600px;
+    height: 500px;
+}
+
+.login{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login h2{
+    font-size: 50px;
+    text-align: center;
+    color: var(--text);
+}
+
+.mensaje{
+    font-size: 20px;
+}
+
+.login p{
+    text-align: center;
+    font-family: 20px;
+    color: var(--text);
+}
+
+.login p a{
+    text-decoration: none;
+    text-decoration: underline;
+    color: var(--secondary);
+}
+
+.login form{
+    background-color: aliceblue;
+    padding: 20px;
+    border: 1px solid var(--primary);
+    border-radius: 20px;
+}
+
+.login input[type="text"], 
+.login input[type="email"], 
+.login input[type="password"]{
+    display: block;
+    margin: 20px;
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.login input[type="text"]:focus, 
+.login input[type="email"]:focus, 
+.login input[type="password"]:focus{
+    box-shadow: 10px 10px 20px rgb(65, 255, 22);
+    scale: 1.1;
+}
+
+.login input[type="submit"]{
+    background-color: var(--secondary);
+    display: block;
+    margin: 30px auto;
+    font-weight: bold;
+    font-size: 20px;
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 20px;
+}

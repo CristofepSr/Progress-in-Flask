@@ -1,0 +1,103 @@
+:root{
+    --text: #03170c;
+    --background: #f6fef8;
+    --primary: #31e36c;
+    --secondary: #8adcaf;
+    --accent: #64d999;
+}
+
+body{
+    background-color: var(--background);
+    margin: 0;
+}
+
+main{
+    min-height: 74vh;
+    max-height: auto ;
+}
+
+.container{
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.paltos{
+    background-color: var(--accent);
+    width: 400px;
+    height: auto;
+    border-radius: 20px;
+}
+
+.paltos h2{
+    color: var(--text);
+    font-size: 35px;
+    text-align: center;
+}
+
+.paltos p{
+    color: var(--text);
+    font-size: 15px;
+    text-align: center;
+}
+
+.paltos form{
+    padding: 20px;
+}
+
+.paltos input{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.paltos input[type="number"],
+.paltos input[type="text"]{
+    width: 300px;
+    height: 40px;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+.paltos input[type="submit"]{
+    background-color: var(--secondary);
+    color: var(--background);
+    width: 100px;
+    height: 50px;
+    border: none;
+    border-radius: 20px;
+}
+
+.categorias{
+    background-color: var(--secondary);
+    width: 300px;
+    height: auto;
+    border-radius: 20px;
+}
+
+.categorias h2{
+    font-size: 20px;
+    color: var(--text);
+    text-align: center;
+}
+
+.categorias ul{
+    list-style: none;
+}
+
+.categorias ul li{
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--text);
+}

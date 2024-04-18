@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Principal</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename="img/logo.png") }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename="css/style.css") }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename="css/navbar.css") }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename="css/font.css") }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename="css/scrollbar.css") }}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename="css/footer.css") }}"> 
+    
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='img/icon.png') }}" alt="icono">
+        <nav class="menu">
+            <ul class="menu_list">
+                <li class="this">
+                    <a href="/">Menu Principal</a>
+                </li>
+                <li class="this">
+                    <a href="/Categoria">Agreg. Categoria</a>
+                </li>
+                <li class="this">
+                    <a href="/Plato">Agreg. Plato</a>
+                </li>
+                <li class="this">
+                    <a href="/mostrar_menu">Mostrar Menu</a>
+                </li>
+                <li>
+                    {% if 'username' in session %}
+                        <div class="dropdown">
+                            <button class="dropdown">{{ session['username'] }}</button>
+                            <div class="dropdown-content">
+                                <a href="/logout">Cerrar sesión</a>
+                                <a href="/login">Cambiar de centa</a>
+                            </div>
+                        </div>
+                    {% else %}
+                        <a href="/login" class="stuffed">Iniciar sesión</a>
+                    {% endif %}
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="saludo">
+            {% if 'username' in session %}
+                <h2>Bienbenido {{ session['username'] }} </h2>
+            {% else %}
+                <h2>Bienbenido User</h2>
+            {% endif %}
+        </div>
+        <div class="menu_principal">
+            <div class="hacer">
+                    <h2 class="hacer_nota">Que desear hacer</h2>
+                    <ul class="hacer_links">
+                        <li><a href="/Categoria">Agreg. Categoria</a></li>
+                        <li><a href="/Plato">Agreg. Plato</a></li>
+                        <li><a href="/mostrar_menu">Mostrar Menu</a></li>
+                    </ul>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-nav">
+            <ul class="footer-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/Categoria">Agreg. Categoria</a></li>
+                <li><a href="/Plato">Agreg. Plato</a></li>
+                <li><a href="/mostrar_menu">Mostrar menu</a></li>
+            </ul>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2024 Todos lo Derechos Reservados </p>
+        </div>
+    </footer>
+</body>
+</html>

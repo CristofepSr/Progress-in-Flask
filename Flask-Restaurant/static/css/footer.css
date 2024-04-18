@@ -1,0 +1,50 @@
+:root{
+    --text: #03170c;
+    --background: #f6fef8;
+    --primary: #31e36c;
+    --secondary: #8adcaf;
+    --accent: #64d999;
+}
+
+footer{
+    background-color: var(--secondary);
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-nav{
+    width: auto;
+}
+
+.footer-links{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-links li{
+    margin-right: 20px;
+}
+
+.footer-links li a{
+    text-decoration: underline var(--background);
+    color: var(--text);
+    font-size: 20px;
+}
+
+.footer-links li:hover{
+    scale: 1.3;
+    transition: .9s;
+}
+
+.footer-copy{
+    margin-top: 10px;
+}
+
+.footer-copy p{
+    font-size: 20px;
+    color: var(--text);
+}
+
