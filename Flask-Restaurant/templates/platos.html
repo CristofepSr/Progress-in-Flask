@@ -50,8 +50,8 @@
                 <h2>Agregar Plato</h2>
                 <P>{{mensaje}}</p>
                 <form action="/Plato" method="post">
-                    <input type="number" name="numCategoria" id="id_categoria" placeholder="Agregar numero de Cateforia">
-                    <input type="text" name="plato" id="plato" placeholder="Nombre del Plato">
+                    <input type="number" name="numCategoria" id="id_categoria" placeholder="Agregar numero de Cateforia" required>
+                    <input type="text" name="plato" id="plato" placeholder="Nombre del Plato" minlength="3" maxlength="20">
                     <input type="submit" value="Agregar">
                 </form>
             </div>

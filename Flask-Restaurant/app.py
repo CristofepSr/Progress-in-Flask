@@ -64,8 +64,6 @@ def plato():
         conn.close() # Cierra la conecion
         return render_template('platos.html', categorias = categoria, mensaje = mensaje)
     
-    
-    
     return render_template('platos.html', categorias = categoria)
 
 @app.route('/mostrar_menu')
@@ -95,7 +93,6 @@ def login():
         username = request.form['username'] # Obtiene el nombre de usuario del formulario
         password = request.form['password'] # Obtiene la contraseña del formulario
         
-        session['username'] = username # Almacena el nombre de usuario en la sesión
         
         conn = connect_database() # Conexion a la Base De Batos
         cursor = conn.cursor()
@@ -106,9 +103,11 @@ def login():
         conn.close() # Cierra la conecion
         
         if user:
+            session['username'] = username # Almacena el nombre de usuario en la sesión
             return redirect(url_for('index'))
-        else:    
-            return render_template('login.html')
+        else: 
+            mensaje = 'Usuario o contraseña incorrectos.'
+            return render_template('login.html', mensaje=mensaje)
     return render_template('login.html')
 
 @app.route('/registro', methods=['GET', 'POST'])
@@ -117,6 +116,7 @@ def registro():
         username = request.form['username'] # Obtiene el nombre de usuario del formulario
         email = request.form['email'] # Obtiene el Corro Elentronico del formulario
         password = request.form['password'] # Obtiene la contraseña del formulario
+        
         session['username'] = username # Almacena el nombre de usuario en la sesión
         
         conn = connect_database() # Conexion a la Base De Batos
