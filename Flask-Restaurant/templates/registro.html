@@ -7,11 +7,13 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/logo.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ url_for('static', filename="css/registro.css") }}">
     <link rel="stylesheet" href="{{ url_for('static', filename="css/navbar.css") }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename="css/notNavbar.css") }}">
     <link rel="stylesheet" href="{{ url_for('static', filename="css/font.css") }}"> 
     <link rel="stylesheet" href="{{ url_for('static', filename="css/scrollbar.css") }}"> 
     <link rel="stylesheet" href="{{ url_for('static', filename="css/footer.css") }}"> 
 </head>
 <body>
+    {% if 'username' in session %}
     <header>
         <img src="{{ url_for('static', filename='img/icon.png') }}" alt="icono">
         <nav class="menu">
@@ -44,6 +46,40 @@
             </ul>
         </nav>
     </header>
+    {% else %}
+    <header>
+        <img src="{{ url_for('static', filename='img/icon.png') }}" alt="icono">
+        <nav class="menu">
+            <ul class="menu_list">
+                <li class="this">
+                    <a href="/registro">Menu Principal</a>
+                </li>
+                <li class="this">
+                    <a href="/registro">Agreg. Categoria</a>
+                </li>
+                <li class="this">
+                    <a href="/registro">Agreg. Plato</a>
+                </li>
+                <li class="this">
+                    <a href="/registro">Mostrar Menu</a>
+                </li>
+                <li>
+                    {% if 'username' in session %}
+                        <div class="dropdown">
+                            <button class="dropdown">{{ session['username'] }}</button>
+                            <div class="dropdown-content">
+                                <a href="">Cerrar sesión</a>
+                                <a href="">Cambiar de centa</a>
+                            </div>
+                        </div>
+                    {% else %}
+                        <a href="/login" class="stuffed">Iniciar sesión</a>
+                    {% endif %}
+                </li>
+            </ul>
+        </nav>
+    </header>
+    {% endif %}
     <main>
         <div class="container">
             <div class="login_img">
@@ -63,10 +99,11 @@
             </div>
         </div>
     </main>
+    {% if 'username' in session %}
     <footer>
         <div class="footer-nav">
             <ul class="footer-links">
-                <li><a href="/">Home</a></li>
+                <li><a href="/">Menu Principal</a></li>
                 <li><a href="/Categoria">Agreg. Categoria</a></li>
                 <li><a href="/Plato">Agreg. Plato</a></li>
                 <li><a href="/mostrar_menu">Mostrar menu</a></li>
@@ -76,5 +113,20 @@
             <p>&copy; 2024 Todos lo Derechos Reservados </p>
         </div>
     </footer>
+    {% else %}
+    <footer>
+        <div class="footer-nav">
+            <ul class="footer-links">
+                <li><a href="/registro">Menu Principal</a></li>
+                <li><a href="/registro">Agreg. Categoria</a></li>
+                <li><a href="/registro">Agreg. Plato</a></li>
+                <li><a href="/registro">Mostrar menu</a></li>
+            </ul>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2024 Todos lo Derechos Reservados </p>
+        </div>
+    </footer>
+    {% endif %}
 </body>
 </html>

@@ -41,6 +41,13 @@ main{
     color: var(--text);
 }
 
+.login .mensaje{
+    text-align: center;
+    font-family: 30px;
+    color: var(--text);
+}
+
+
 .login p{
     text-align: center;
     font-family: 20px;

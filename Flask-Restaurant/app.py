@@ -13,7 +13,10 @@ def connect_database():
 # Ruta Principal de web
 @app.route('/')
 def index():
-    return render_template('index.html')
+    if 'username' not in session:
+        return redirect(url_for('login'))  # Redirige al usuario al login si no está autenticado
+    else:
+        return render_template('index.html')
 
 #  Ruta para Agregar Categoria
 @app.route('/Categoria', methods=['GET', 'POST'])
@@ -86,7 +89,6 @@ def mostrar_menu():
     
     return render_template('menu.html', categorias_platos=platos)
 
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -139,7 +141,7 @@ def registro():
 @app.route('/logout')
 def logout():
     session.pop('username', None)
-    return redirect(url_for('index'))
+    return redirect(url_for('login'))
 
 
 if __name__ == '__main__':
