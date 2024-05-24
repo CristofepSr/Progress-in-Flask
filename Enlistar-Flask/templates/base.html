@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}{%endblock title%}</title>
+<link rel="shortcut icon" href="{{ url_for('static', filename="img/logo.png") }}" type="image/x-icon">
+
+        <!-- Link -->
+        {%block link%}
+        {%endblock link%}
+</head>
+<body>
+    <!-- Header -->
+    {%block header%}
+    {%endblock header%}
+
+    <!-- Main -->
+    {%block main%}
+    {%endblock main%}
+
+    <!-- Footer -->
+    {%block footer%}
+    {%endblock footer%}
+
+    <!-- Script -->
+    {%block script%}
+    {%endblock script%}
+</body>
+</html>

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{%block title%}Tabla de Usuarios{%endblock title%}
+{%block link%}
+<link rel="stylesheet" href="{{ url_for('static', filename="css/userlist.css") }}">
+{%endblock link%}
+
+{%block header%}
+<header>
+    <nav class="menu">
+        <ul class="menu__list">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/userlist">Usuarios</a></li>
+            <li><a href="/product">Productos</a></li>
+            {%if 'username' in session%}
+            <li><a href="/logout">Cerara sesión</a></li>
+            {%else%}
+            <li><a href="/logout">Inciar sesión</a></li>
+            {%endif%}
+        </ul>
+    </nav>
+</header>
+{%endblock header%}
+
+{%block main%}
+<div class="user__login">
+    {% if 'username' in session %}
+    <div>
+        <span>Hola, {{ session['username'] }}</span>
+    </div>
+    {% else %}
+    <div class="user">
+        <a href="/login">Ingresar</a>
+        <a href="/register">Registrarse</a>
+    </div>
+    {% endif %}
+</div>
+
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Correo Electronico</th>
+                <th>Fecha De Registro</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for id, username,email, creado_en in datos %}
+            <tr>
+    
+                <td>{{id}}</td>
+                <td>{{username}}</td>
+                <td>{{email}}</td>
+                <td>{{creado_en}}</td>
+            </tr>
+            {% endfor %}
+    
+        </tbody>
+    </table>
+</div>
+
+
+{%endblock main%}

@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{%block title%}Productos{%endblock title%}
+{%block link%}
+<link rel="stylesheet" href="{{ url_for('static', filename="css/productos/productos.css") }}">
+{%endblock link%}
+
+{%block header%}
+<header>
+    <nav class="menu">
+        <ul class="menu__list">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/userlist">Usuarios</a></li>
+            <li><a href="/product">Productos</a></li>
+            {%if 'username' in session%}
+            <li><a href="/logout">Cerara sesión</a></li>
+            {%else%}
+            <li><a href="/logout">Inciar sesión</a></li>
+            {%endif%}
+        </ul>
+    </nav>
+</header>
+{%endblock header%}
+
+{%block main%}
+<div class="user__login">
+    {% if 'username' in session %}
+    <div>
+        <span>Hola, {{ session['username'] }}</span>
+    </div>
+    {% else %}
+    <div class="user">
+        <a href="/login">Ingresar</a>
+        <a href="/register">Registrarse</a>
+    </div>
+    {% endif %}
+</div>
+
+<div class="add_product">
+    <a href="/add_product">add_product</a>
+</div>
+
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th class="id">No°</th>
+                <th class="name">Nombre</th>
+                <th class="desc">Descripcion</th>
+                <th class="precio">Precio</th>
+                <th class="stock">Stock</th>
+                <th class="creador">Creador</th>
+                <th class="time">Fecha de creacion</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in producto %}
+            <tr>
+    
+                <td>{{producto[0]}}</td>
+                <td>{{producto[1]}}</td>
+                <td>{{producto[2]}}</td>
+                <td>{{producto[3]}}</td>
+                <td>{{producto[4]}}</td>
+                <td>{{producto[6]}}</td>
+                <td>{{producto[5]}}</td>
+                <td><a href="/edit_product/{{ producto[0] }}">Editar</a></td>
+            </tr>
+            {% endfor %}
+    
+        </tbody>
+    </table>
+</div>
+
+
+{%endblock main%}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{%block title%}Editar productos{%endblock title%}
+{%block link%}
+<link rel="stylesheet" href="{{ url_for('static', filename="css/productos/form.css") }}">
+{%endblock link%}
+
+{%block header%}
+<header>
+        <h1>Editar El producto: {{ producto[1] }}</h1>
+</header>
+{%endblock header%}
+
+{%block main%}
+<div class="container">
+    <form action="/edit_product/{{ producto[0] }}" method="post">
+        <label for="name">Nombre</label>
+        <input type="text" name="nombre" id="nombre"  value="{{ producto[1] }}" placeholder="Nombre">
+        <label for="">Descripcion</label>
+        <input type="text" name="descripcion" id="descripcion" value="{{ producto[2] }}" placeholder="Descripcion">
+        <label for="precio">Precio</label>
+        <input type="text" name="precio" id="precio" value="{{ producto[3] }}" placeholder="Precio">
+        <label for="stock">stock</label>
+        <input type="text" name="stock" id="stock" value="{{ producto[4] }}" placeholder="Stock">
+        <input type="submit" value="Editar">
+    </form>
+    <p class="volver"><a href="/product">←Vover</a></p>
+</div>
+
+{%endblock main%}

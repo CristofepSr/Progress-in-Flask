@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{%block title%}Login{%endblock title%}
+{%block link%}
+<link rel="stylesheet" href="{{ url_for('static', filename="css/auth/login.css") }}">
+{%endblock link%}
+
+{%block main%}
+<div class="container">
+    <form action="/login" method="post">
+        <label for="name">Nombre</label>
+        <input type="text" name="username" id="name" placeholder="Nombre">
+        <label for="password">Contraseña</label>
+        <div class="password-container">
+            <input type="password" name="password" id="password" placeholder="Contraseña">
+            <input type="checkbox" name="seepassword" id="seepassword"> 
+            <label for="seepassword" class="seepassword">Mostrar Contraseña</label>
+        </div>
+        <input type="submit" value="Inicia sesión">
+    </form>
+    <p>¿tienes una cuenta?<a href="/register">registarte</a></p>
+    <p class="volver"><a href="/">←Vover</a></p>
+</div>
+
+{%endblock main%}
+
+{%block script%}
+<script src="{{ url_for('static', filename="js/seepassword.js") }}"></script>
+{%endblock script%}
